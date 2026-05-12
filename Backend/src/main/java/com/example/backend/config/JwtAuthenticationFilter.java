@@ -75,3 +75,10 @@ public class JwtAuthenticationFilter
         filterChain.doFilter(request, response);
     }
 }
+//JwtAuthenticationFilter
+//
+//Responsible for:
+//
+//Extract token
+//→ validate token
+//→ authenticate user

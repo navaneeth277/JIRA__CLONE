@@ -1,5 +1,6 @@
-package com.example.backend.controller;
+package com.example.backend.controller;// tells package name
 
+// import all this packages
 import com.example.backend.dto.request.*;
 import com.example.backend.dto.response.*;
 import com.example.backend.service.AuthService;
@@ -8,18 +9,18 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping("/api/auth")
-@RequiredArgsConstructor
+@RestController// this handles http request and responds and container tell to create a container to spring boot
+@RequestMapping("/api/auth")//url path
+@RequiredArgsConstructor// lambok annootation
 public class AuthController {
 
-    private final AuthService authService;
+    private final AuthService authService;//only accases in this class-> used private
 
-    @PostMapping("/register")
+    @PostMapping("/register")//post end point..
     public AuthResponse register(
             @Valid @RequestBody RegisterRequest request) {
 
-        return authService.register(request);
+        return authService.register(request);//calls authservics.
     }
 
     @PostMapping("/login")

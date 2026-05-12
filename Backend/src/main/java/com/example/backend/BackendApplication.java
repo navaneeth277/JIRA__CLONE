@@ -10,8 +10,8 @@ public class BackendApplication {
 
     public static void main(String[] args) {
 
-        SpringApplication.run(BackendApplication.class, args);
+        SpringApplication.run(BackendApplication.class, args);//This starts the entire Spring Boot application.
 
-        log.info("Backend Application Started Successfully");
+        log.info("Backend Application Started Successfully");//Prints log message.
     }
 }

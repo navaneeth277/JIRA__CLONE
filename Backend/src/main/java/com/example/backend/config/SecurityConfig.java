@@ -38,7 +38,7 @@ public class SecurityConfig {
             throws Exception {
 
         http
-                .csrf(csrf -> csrf.disable())
+                .csrf(csrf -> csrf.disable())// DESABLES THE CSRF(Cross-Site Request Forgery) CSRF MEANS USING SAME KIND OF SESSION INFO TO USE AND ACCESS.
 
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(
@@ -49,8 +49,8 @@ public class SecurityConfig {
                         .requestMatchers(
                                 "/api/auth/register",
                                 "/api/auth/login"
-                        ).permitAll()
-                        .anyRequest().authenticated()
+                        ).permitAll()// THIS URLS NO NEEDED A JWT TOKEN
+                        .anyRequest().authenticated()// OTHER ENDPOINTS NEEDED A AUTHENTICATION TO USE(ACCESS)
                 )
 
                 .addFilterBefore(
@@ -61,3 +61,11 @@ public class SecurityConfig {
         return http.build();
     }
 }
+//SecurityConfig
+
+//Responsible for:
+//
+//Configure Spring Security
+//→ define routes
+//→ add JWT filter
+//→ define stateless auth

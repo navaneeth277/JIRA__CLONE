@@ -29,7 +29,7 @@ public class AuthServiceImpl implements AuthService {
                     "Email already exists"
             );
         }
-
+    // USED BUILDER DESIGN PATTERN TO CREATE A USER
         User user = User.builder()
                 .name(request.getName())
                 .email(request.getEmail())
@@ -40,7 +40,7 @@ public class AuthServiceImpl implements AuthService {
                 )
                 .build();
 
-        userRepository.save(user);
+        userRepository.save(user);//
 
         String token =
                 jwtService.generateToken(user.getEmail());

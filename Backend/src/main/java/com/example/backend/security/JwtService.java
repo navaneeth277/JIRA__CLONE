@@ -24,12 +24,12 @@ public class JwtService {
     public String generateToken(String email) {
 
         return Jwts.builder()
-                .setSubject(email)
+                .setSubject(email)//PAYLOAD
                 .setIssuedAt(new Date())
                 .setExpiration(
                         new Date(System.currentTimeMillis() + expiration)
                 )
-                .signWith(getSigningKey(), SignatureAlgorithm.HS256)
+                .signWith(getSigningKey(), SignatureAlgorithm.HS256)//SIGNATURE
                 .compact();
     }
 

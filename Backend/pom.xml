@@ -1,3 +1,4 @@
+<!--This file used to manage dependencies-->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
@@ -7,7 +8,9 @@
 
     <!-- Spring Boot Parent -->
     <parent>
+<!--        groupid  is uses for unique name reverese of domain name-->
         <groupId>org.springframework.boot</groupId>
+<!--        module name-->
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.3.0</version>
         <relativePath/>
@@ -25,9 +28,17 @@
         <java.version>21</java.version>
         <jjwt.version>0.11.5</jjwt.version>
     </properties>
+<!--    Your Project Coordinates-->
 
-    <dependencies>
+<!--    Maven uniquely identifies projects using:-->
 
+<!--    groupId + artifactId + version-->
+
+<!--    Like:-->
+
+<!--    com.example:backend:0.0.1-SNAPSHOT  -->
+  <dependencies>
+<!--external libraries.-->
         <!-- Spring Boot Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -40,7 +51,21 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
-        <!-- Spring Data JPA -->
+        <!-- Spring Data JPA
+
+         What Does It Include?
+
+This is a starter dependency.
+
+Includes:
+
+Spring MVC
+Jackson
+Validation support
+Embedded Tomcat
+REST support
+JSON serialization-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
